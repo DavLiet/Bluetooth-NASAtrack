@@ -26,15 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    private static final Map<Color, Integer> BACKGROUND_COLORS = new HashMap<>();
 
-    static {
-        BACKGROUND_COLORS.put(Color.ICY_MARSHMALLOW, android.graphics.Color.rgb(109, 170, 199));
-        BACKGROUND_COLORS.put(Color.BLUEBERRY_PIE, android.graphics.Color.rgb(98, 84, 158));
-        BACKGROUND_COLORS.put(Color.MINT_COCKTAIL, android.graphics.Color.rgb(155, 186, 160));
-    }
 
-    private static final int BACKGROUND_COLOR_NEUTRAL = android.graphics.Color.rgb(160, 169, 172);
+
 
     private ProximityContentManager proximityContentManager;
 
@@ -55,14 +49,21 @@ public class MainActivity extends AppCompatActivity {
                 if (content != null) {
                     EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
                     text = "You're in " + beaconDetails.getBeaconName() + "'s range!";
-                    //backgroundColor = BACKGROUND_COLORS.get(beaconDetails.getBeaconColor());
+
+
+
+
+
+
+
+
+
                 } else {
                     text = "No beacons in range.";
-                    //backgroundColor = null;
+
                 }
                 ((TextView) findViewById(R.id.textView)).setText(text);
-                //findViewById(R.id.relativeLayout).setBackgroundColor(
-                //backgroundColor != null ? backgroundColor : BACKGROUND_COLOR_NEUTRAL);
+
             }
         });
     }
